@@ -81,4 +81,4 @@ scrape_detainees <- function(url){
 #run function on all our pages
 data <- map_dfr(urls,scrape_detainees)
 
-write_csv(data,paste0("data/detainees/",Sys.Date(),"_detainees.csv"))
+write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
