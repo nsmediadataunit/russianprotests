@@ -19,3 +19,7 @@ Imports:
     magrittr,
     readr,
     stringr,
+    purrr,
+    tibble,
+    dplyr,
+    tidyr
