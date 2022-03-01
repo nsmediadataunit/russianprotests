@@ -1,0 +1,21 @@
+Package: russianprotests
+Title: Scrape and Structure Russian Protest Data
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Michael",
+           family = "Goodier",
+           role = c("aut", "cre"),
+           email = "michael.goodier@ns-mediagroup.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: To scrape and structure data on Russian protests against military action in Ukraine.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports:
+    rvest,
+    magrittr,
+    readr,
+    stringr,
