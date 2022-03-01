@@ -21,7 +21,7 @@ urls <- read_html(latest_url) %>%
   html_nodes("a") %>%
   html_attr("href") %>%
   url_absolute("https://ovd.news") %>%
-  c(latest_url,.)
+  c(latest_url)
 
 #function to scrape pages and get data
 
