@@ -83,7 +83,7 @@ data <- map_dfr(urls,scrape_detainees)
 
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 
-#locations
+#get locations
 
 locations <-  data %>% select(city,district) %>%
   filter(!str_detect(district,"неизвестно")) %>%
@@ -92,4 +92,7 @@ locations <-  data %>% select(city,district) %>%
          across(c("district","city"), trimws),
          contains = str_match(district," г. "),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
-  left_join(read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv"))
+  left_join(read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv"))%>%
+  select(city,district,location,lat,lon)
+
+write_excel_csv(locations,"data/locations.csv")
