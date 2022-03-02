@@ -1,17 +1,18 @@
 Lat,Lon,Title,cumulative_detainees
+NA,NA,NA,1
 67.56711,33.39107,Apatity,2
 56.09103,49.88021,ARSK,1
-64.54585,40.55058,Arkhangelsk,19
+64.54585,40.55058,Arkhangelsk,24
 46.3586,48.05695,Astrakhan,1
-53.34975,83.78357,Barnaul,8
+53.34975,83.78357,Barnaul,9
 50.59971,36.59826,Belgorod,3
 56.90888,60.79501,Berezovsky,1
-53.26353,34.41611,Bryansk,3
+53.26353,34.41611,Bryansk,4
 56.33961,30.53148,Great Luki.,1
 58.52557,31.27419,Velikiy Novgorod,8
 43.13325,131.9113,Vladivostok.,9
 56.1428,40.38958,Vladimir,3
-48.70805,44.5133,Volgograd,31
+48.70805,44.5133,Volgograd,30
 59.21807,39.89781,Vologda,8
 51.66835,39.19193,Voronezh,36
 60.70956,28.74904,Vyborg,3
@@ -19,7 +20,7 @@ Lat,Lon,Title,cumulative_detainees
 55.44302,37.74782,Domodedovo,1
 56.73202,37.1669,Dubna,7
 45.19045,33.36687,Evpatoria,1
-56.8431,60.64541,Ekaterinburg,126
+56.8431,60.64541,Ekaterinburg,144
 44.14583,42.99893,Zheleznovodsk,1
 56.58376,104.1149,Zheleznogorsk-Ilimsky,2
 55.59749,38.11326,Zhukovsky,1
@@ -29,7 +30,7 @@ Lat,Lon,Title,cumulative_detainees
 52.28548,104.289,Irkutsk,34
 55.91418,36.85967,Istra,3
 56.6418,47.88958,Yoshkar-Ola.,2
-55.78789,49.12333,Kazan,69
+55.78789,49.12333,Kazan,73
 54.71043,20.45221,Kaliningrad,29
 54.51359,36.26368,Kaluga,10
 55.34433,86.06209,Kemerovo,1
@@ -38,8 +39,8 @@ Lat,Lon,Title,cumulative_detainees
 59.76176,30.5789,Kolpino,7
 57.76771,40.92626,Kostroma,3
 45.03604,38.97457,Krasnodar,109
-56.01528,92.89325,Krasnoyarsk,419
-55.45905,65.34932,Mound,3
+56.01528,92.89325,Krasnoyarsk,420
+55.45905,65.34932,Mound,11
 51.74824,36.1947,Kursk,1
 60.73431,33.54313,Lodeynoye Field,1
 55.57954,37.91204,Lytkarino,2
@@ -47,15 +48,15 @@ Lat,Lon,Title,cumulative_detainees
 53.39272,59.06231,Magnitogorsk,4
 42.97779,47.51469,Makhachkala,1
 61.02862,76.11052,Megion,1
-55.75583,37.6173,Moscow,3314
+55.75583,37.6173,Moscow,3377
 60.04536,30.44899,Murino,4
-68.97331,33.08558,Murmansk,7
+68.97331,33.08558,Murmansk,10
 55.73057,52.38929,Naberezhnye Chelny,4
 43.4846,43.60701,Nalchik,3
 56.32687,44.00588,Nizhny Novgorod,105
 57.92149,59.98162,Nizhny Tagil,1
 44.71805,37.77701,Novorossiysk,1
-54.98327,82.89638,Novosibirsk,78
+54.98327,82.89638,Novosibirsk,93
 47.41484,40.10847,Novocherkassk,1
 55.11704,36.59708,Obninsk,2
 55.67337,37.28186,Odintsovo,1
@@ -65,7 +66,7 @@ Lat,Lon,Title,cumulative_detainees
 53.227290000000004,45,Penza,3
 56.9047,59.94302,Pervouralsk,1
 56.74705,38.89026,Pereslavl-Zalessky,1
-58.00917,56.22697,Permian,45
+58.00917,56.22697,Permian,49
 59.8845,29.88518,Peterhof,5
 61.77816,34.36404,Petrozavodsk,1
 55.43125,37.54576,Podolsk,1
@@ -75,10 +76,10 @@ Lat,Lon,Title,cumulative_detainees
 59.71759,30.406,Pushkin,9
 54.83239,37.62106,Pushchino,2
 44.04989,43.03964,Pyatigorsk,1
-47.23571,39.70151,Rostov-on-Don,20
+47.23571,39.70151,Rostov-on-Don,22
 54.60954,39.71259,Ryazan,5
 53.20377,50.16064,Samara,47
-59.93106,30.36091,St. Petersburg,2242
+59.93106,30.36091,St. Petersburg,2309
 51.54618,46.01541,Saratov,44
 54.91796,37.423,Serpukhov,3
 60.10145,29.95736,Sestroretsk,1
@@ -88,6 +89,7 @@ Lat,Lon,Title,cumulative_detainees
 56.12315,93.34008,Sosnovoborsk,1
 43.60281,39.73415,Sochi,4
 45.03901,41.9632,Stavropol.,4
+NA,NA,NA,1
 61.25458,73.39617,Surgut,1
 61.66411,50.81688,Syktyvkar,12
 52.73711,41.43961,Tambov,1
@@ -96,18 +98,20 @@ Lat,Lon,Title,cumulative_detainees
 53.50853,49.41822,Tolyatti,2
 56.48843,84.94805,Tomsk,5
 44.09616,39.07454,Tuapse,1
+NA,NA,NA,1
 54.20484,37.61849,Tula.,2
 57.15534,65.56186,Tyumen,17
 51.83359,107.584,Ulan-Ude,3
 54.31866,48.39778,Ulyanovsk,10
 54.73479,55.95786,Ufa,38
 55.80893,94.31155,UYAR,1
+NA,NA,NA,1
 55.96026,38.04414,Fryazino,1
 48.48144,135.0721,Khabarovsk,3
 55.89406,37.44395,Khimki,1
 52.96967,49.70673,Chapaevsk,1
 56.11677,47.26278,Cheboksary,3
-55.16444,61.43684,Chelyabinsk,34
+55.16444,61.43684,Chelyabinsk,43
 59.13233,37.90918,Cherepovets,1
 46.31549,44.2794,Elista,1
 46.96409,142.7285,Yuzhno-Sakhalinsk,2
