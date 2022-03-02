@@ -104,3 +104,14 @@ write_excel_csv(locations,"data/locations.csv")
 data <- data %>% left_join(locations)
 
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
+write_csv(data,paste0("data/detainees/latest_daily_detainees.csv"))
+
+#summary tables
+cumulative_district <- data %>% group_by(city,district) %>%
+  summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
+write_csv(data,paste0("data/detainees/latest_cumulative_detainees_district.csv"))
+cumulative_city <- data %>% group_by(city)%>%
+  summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
+city2 <- data %>% select(city,city_detainees) %>% unique() %>% group_by(city)%>%
+  summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T))
+write_csv(cumulative_city,paste0("data/detainees/latest_cumulative_detainees_city.csv"))
