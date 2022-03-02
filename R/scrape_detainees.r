@@ -81,6 +81,11 @@ scrape_detainees <- function(url){
 #run function on all our pages
 data <- map_dfr(urls,scrape_detainees)
 
+#clean data 
+data <- data %>%
+  mutate(across(c("district","city"), str_replace_all,"\\n|\\s"," "),
+         across(c("district","city"), trimws))
+
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 
 #get locations
@@ -88,11 +93,14 @@ write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 locations <-  data %>% select(city,district) %>%
   filter(!str_detect(district,"неизвестно")) %>%
   unique() %>%
-  mutate(across(c("district","city"), str_replace_all,"\\n|\\s"," "),
-         across(c("district","city"), trimws),
-         contains = str_match(district," г. "),
+  mutate(contains = str_match(district," г. "),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
   left_join(read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv"))%>%
   select(city,district,location,lat,lon)
-
+  
 write_excel_csv(locations,"data/locations.csv")
+
+#join data
+data <- data %>% left_join(locations)
+
+write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
