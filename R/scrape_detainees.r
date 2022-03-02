@@ -130,4 +130,4 @@ city2 <- data_geo %>% select(city,city_en,city_detainees) %>% unique() %>% group
   summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T))
 write_csv(cumulative_city,paste0("data/detainees/latest_cumulative_detainees_city.csv"))
 timeseries <- data %>% group_by(date) %>% summarise(sum_district_detainees = sum(district_detainees))
-write_csv(timeseries,"data/latest_timeseries.csv")
+write_csv(timeseries,"data/detainees/latest_timeseries.csv")
