@@ -7,7 +7,7 @@ Lat,Lon,Title,cumulative_detainees
 53.34975,83.78357,Barnaul,9
 50.59971,36.59826,Belgorod,3
 56.90888,60.79501,Berezovsky,1
-53.26353,34.41611,Bryansk,4
+53.26353,34.41611,Bryansk,5
 56.33961,30.53148,Great Luki.,1
 58.52557,31.27419,Velikiy Novgorod,8
 43.13325,131.9113,Vladivostok.,9
@@ -20,7 +20,7 @@ Lat,Lon,Title,cumulative_detainees
 55.44302,37.74782,Domodedovo,1
 56.73202,37.1669,Dubna,7
 45.19045,33.36687,Evpatoria,1
-56.8431,60.64541,Ekaterinburg,146
+56.8431,60.64541,Ekaterinburg,147
 44.14583,42.99893,Zheleznovodsk,1
 56.58376,104.1149,Zheleznogorsk-Ilimsky,2
 55.59749,38.11326,Zhukovsky,1
@@ -31,14 +31,14 @@ Lat,Lon,Title,cumulative_detainees
 55.91418,36.85967,Istra,3
 56.6418,47.88958,Yoshkar-Ola.,2
 55.78789,49.12333,Kazan,73
-54.71043,20.45221,Kaliningrad,29
+54.71043,20.45221,Kaliningrad,32
 54.51359,36.26368,Kaluga,10
 55.34433,86.06209,Kemerovo,1
 58.603,49.66794,Kirov,8
 55.09375,38.76886,Kolomna,3
 59.76176,30.5789,Kolpino,7
 57.76771,40.92626,Kostroma,3
-45.03604,38.97457,Krasnodar,109
+45.03604,38.97457,Krasnodar,111
 56.01528,92.89325,Krasnoyarsk,420
 55.45905,65.34932,Mound,11
 51.74824,36.1947,Kursk,1
@@ -48,7 +48,7 @@ Lat,Lon,Title,cumulative_detainees
 53.39272,59.06231,Magnitogorsk,4
 42.97779,47.51469,Makhachkala,1
 61.02862,76.11052,Megion,1
-55.75583,37.6173,Moscow,3434
+55.75583,37.6173,Moscow,3516
 60.04536,30.44899,Murino,4
 68.97331,33.08558,Murmansk,7
 55.73057,52.38929,Naberezhnye Chelny,4
@@ -76,10 +76,10 @@ Lat,Lon,Title,cumulative_detainees
 59.71759,30.406,Pushkin,9
 54.83239,37.62106,Pushchino,2
 44.04989,43.03964,Pyatigorsk,1
-47.23571,39.70151,Rostov-on-Don,22
+47.23571,39.70151,Rostov-on-Don,23
 54.60954,39.71259,Ryazan,5
 53.20377,50.16064,Samara,47
-59.93106,30.36091,St. Petersburg,2344
+59.93106,30.36091,St. Petersburg,2428
 51.54618,46.01541,Saratov,44
 54.91796,37.423,Serpukhov,3
 60.10145,29.95736,Sestroretsk,1
@@ -111,7 +111,7 @@ Lat,Lon,Title,cumulative_detainees
 55.89406,37.44395,Khimki,1
 52.96967,49.70673,Chapaevsk,1
 56.11677,47.26278,Cheboksary,3
-55.16444,61.43684,Chelyabinsk,43
+55.16444,61.43684,Chelyabinsk,50
 59.13233,37.90918,Cherepovets,1
 46.31549,44.2794,Elista,1
 46.96409,142.7285,Yuzhno-Sakhalinsk,2
