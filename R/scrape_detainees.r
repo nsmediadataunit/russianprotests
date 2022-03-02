@@ -103,12 +103,20 @@ missing_district_locations <- locations %>% filter(is.na(lon))
   
 write_excel_csv(locations,"data/district_locations.csv")
 
+#get city locations
+old_city_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=864898366&single=true&output=csv")
+
+city_locations <-  data %>% select(city) %>% unique() %>%
+  left_join(old_city_locations)
+
+missing_city_locations <- city_locations %>% filter(is.na(city_lon))
+
+write_excel_csv(city_locations,"data/city_locations.csv")
 
 #join data
-data <- data %>% left_join(locations) %>%
-  left_join(select(old_locations,city,city_en))
+data_geo <- data %>% left_join(locations) %>% left_join(city_locations)
 
-write_csv(data,paste0("data/detainees/latest_daily_detainees.csv"))
+write_csv(data_geo,paste0("data/detainees/latest_daily_detainees.csv"))
 
 #summary tables
 cumulative_district <- data %>% group_by(city,district,city_en,district_en) %>%
