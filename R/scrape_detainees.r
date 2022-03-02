@@ -85,7 +85,8 @@ data <- map_dfr(urls,scrape_detainees)
 #clean data 
 data <- data %>%
   mutate(across(c("district","city"), str_replace_all,"\\n|\\s"," "),
-         across(c("district","city"), trimws))
+         across(c("district","city"), trimws),
+         date=lubridate::dmy(date))
 
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 
@@ -98,7 +99,7 @@ locations <-  data %>% select(city,district) %>%
   mutate(contains = str_match(district,"\\u0020\\u0433\\u002E\\u0020"),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
   left_join(old_district_locations)%>%
-  select(city,district,district_en,location,lat,lon)
+  select(city,district,district_en,location,lat,lon) %>% unique()
 
 missing_district_locations <- locations %>% filter(is.na(lon))
   
@@ -120,11 +121,13 @@ data_geo <- data %>% left_join(locations) %>% left_join(city_locations)
 write_csv(data_geo,paste0("data/detainees/latest_daily_detainees_district.csv"))
 
 #summary tables
-cumulative_district <- data %>% group_by(city,district,city_en,district_en) %>%
+cumulative_district <- data_geo %>% group_by(city,district,city_en,district_en) %>%
   summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
 write_csv(data,paste0("data/detainees/latest_cumulative_detainees_district.csv"))
-cumulative_city <- data %>% group_by(city,city_en)%>%
+cumulative_city <- data_geo %>% group_by(city,city_en)%>%
   summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
-city2 <- data %>% select(city,city_en,city_detainees) %>% unique() %>% group_by(city,city_en)%>%
+city2 <- data_geo %>% select(city,city_en,city_detainees) %>% unique() %>% group_by(city,city_en)%>%
   summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T))
 write_csv(cumulative_city,paste0("data/detainees/latest_cumulative_detainees_city.csv"))
+timeseries <- data %>% group_by(date) %>% summarise(sum_district_detainees = sum(district_detainees))
+write_csv(timeseries,"data/latest_timeseries.csv")
