@@ -1,6 +1,5 @@
 ﻿city,district,district_en,location,lat,lon
 Москва,ОМВД России по району Таганский г. Москвы,OMVD of Russia for the Tagansky district of Moscow,ОМВД России по району Таганский г. Москвы,55.73482,37.68153
-Москва,ОМВД России по району Таганский г. Москвы,OMVD of Russia for the Tagansky district of Moscow,ОМВД России по району Таганский г. Москвы,55.73482,37.68153
 Москва,ОМВД России по району Котловка г. Москвы,OMVD of Russia in the district Kotlovka Moscow,ОМВД России по району Котловка г. Москвы,55.68162,37.60881
 Москва,ОМВД России по району Черемушки г. Москвы,OMVD of Russia in the district of Cheryomushki in Moscow,ОМВД России по району Черемушки г. Москвы,55.66419,37.56408
 Москва,ОМВД Медведково Южное,OmVD Medvedkovo South,"ОМВД Медведково Южное, Москва",55.87144,37.66158
@@ -148,7 +147,6 @@
 Иркутск,Отдел полиции № 5 УМВД по г. Иркутску,Police Department No. 5 Umvd in Irkutsk,Отдел полиции № 5 УМВД по г. Иркутску,52.29083,104.294
 Псков,Отдел полиции № 1 УМВД по городу Пскову,Police Department No. 1 Ministry of Internal Affairs for the city of Pskov,"Отдел полиции № 1 УМВД по городу Пскову, Псков",57.82219,28.36455
 Колпино,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,Police Department No. 55 Kolpinsky District of St. Petersburg,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,59.73548,30.58887
-Колпино,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,Police Department No. 55 Kolpinsky District of St. Petersburg,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,59.73548,30.58887
 Великий Новгород,Управление МВД России по городу Великий Новгород,Office of the Ministry of Internal Affairs of Russia in the city Veliky Novgorod,"Управление МВД России по городу Великий Новгород, Великий Новгород",58.54443,31.30573
 Сыктывкар,УМВД России по городу Сыктывкару,Ministry of Internal Affairs of Russia in the city Syktyvkar,"УМВД России по городу Сыктывкару, Сыктывкар",61.67454,50.82505
 Вологда,Отдел полиции № 1 УМВД по г. Вологде,Police Department No. 1 Umvd in Vologda,Отдел полиции № 1 УМВД по г. Вологде,59.20854,39.88498
@@ -196,17 +194,13 @@
 Москва,ОМВД России по району Филевский парк г. Москвы,OMVD of Russia in the district Filevsky Park of Moscow,ОМВД России по району Филевский парк г. Москвы,55.74642,37.50365
 Москва,Отдел МВД России по району Марьино,Department of the Ministry of Internal Affairs of Russia in the area of ​​Marino,"Отдел МВД России по району Марьино, Москва",55.66987,37.75103
 Санкт-Петербург,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for Pushkinsky District of St. Petersburg,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,59.73695,30.40553
-Санкт-Петербург,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for Pushkinsky District of St. Petersburg,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,59.73695,30.40553
 Санкт-Петербург,Отдел полиции № 4 Пушкинского района г. Санкт-Петербурга,Police Department No. 4 Pushkinsky District of St. Petersburg,Отдел полиции № 4 Пушкинского района г. Санкт-Петербурга,59.73695,30.40553
 Санкт-Петербург,Отдел МВД по Курортному району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs in the Resort District of St. Petersburg,Отдел МВД по Курортному району г. Санкт-Петербурга,60.18823,29.80873
 Санкт-Петербург,Отдел полиции № 39 Колпинского района г. Санкт-Петербурга,Police Department No. 39 of the Kolpinsky district of St. Petersburg,Отдел полиции № 39 Колпинского района г. Санкт-Петербурга,59.81182,30.57789
 Санкт-Петербург,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for the Petrodvortsum District of St. Petersburg,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,59.87766,29.85881
-Санкт-Петербург,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for the Petrodvortsum District of St. Petersburg,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,59.87766,29.85881
-Санкт-Петербург,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,Police Department No. 55 Kolpinsky District of St. Petersburg,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,59.73548,30.58887
 Санкт-Петербург,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,Police Department No. 55 Kolpinsky District of St. Petersburg,Отдел полиции № 55 Колпинского района г. Санкт-Петербурга,59.73548,30.58887
 Санкт-Петербург,Отдел МВД по Кронштадтскому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for the Kronstadt District of St. Petersburg,Отдел МВД по Кронштадтскому району г. Санкт-Петербурга,59.99433,29.76441
 Екатеринбург,Отдел полиции № 5 УМВД по городу Екатеринбургу,Police Department No. 5 Ministry of Internal Affairs in Ekaterinburg,"Отдел полиции № 5 УМВД по городу Екатеринбургу, Екатеринбург",56.81432,60.5832
-Пушкин,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for Pushkinsky District of St. Petersburg,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,59.73695,30.40553
 Пушкин,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for Pushkinsky District of St. Petersburg,Отдел МВД по Пушкинскому району г. Санкт-Петербурга,59.73695,30.40553
 Иркутск,Отдел полиции № 7 УМВД по г. Иркутску,Police Department No. 7 UMVD in Irkutsk,Отдел полиции № 7 УМВД по г. Иркутску,52.2749,104.3199
 Омск,Отдел полиции № 10 УМВД по г. Омску,Police Department No. 10 Umvd in Omsk,Отдел полиции № 10 УМВД по г. Омску,54.98684,73.37965
@@ -216,7 +210,6 @@
 Курган,Отдел полиции № 1 УМВД по г. Кургану,Police Department No. 1 Umvd for the city of Kurgan,Отдел полиции № 1 УМВД по г. Кургану,55.44414,65.35869
 Тверь,Отдел полиции Центральный УМВД по городу Твери,Police Department Central Ministry of Internal Affairs in Tver City,"Отдел полиции Центральный УМВД по городу Твери, Тверь",56.84643,35.90852
 Псков,Отдел полиции № 2 УМВД по городу Пскову,Police Department No. 2 UMVD in the city of Pskov,"Отдел полиции № 2 УМВД по городу Пскову, Псков",57.82219,28.36455
-Петергоф,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for the Petrodvortsum District of St. Petersburg,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,59.87766,29.85881
 Петергоф,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,Department of the Ministry of Internal Affairs for the Petrodvortsum District of St. Petersburg,Отдел МВД по Петродворцовому району г. Санкт-Петербурга,59.87766,29.85881
 Туапсе,Отдел МВД по Туапсинскому району,Department of the Ministry of Internal Affairs in the Tuapse district,"Отдел МВД по Туапсинскому району, Туапсе",44.09892,39.07499
 Москва,Ломоносовский,Lomonosovsky,"Ломоносовский, Москва",55.6955,37.55647

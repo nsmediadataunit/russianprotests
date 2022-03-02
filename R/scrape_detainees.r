@@ -5,6 +5,7 @@ library(purrr)
 library(tibble)
 library(dplyr)
 library(tidyr)
+library(readr)
 #DETAINEES (From OVD-Info https://ovdinfo.org/) ----
 
 #get latest page
@@ -96,7 +97,7 @@ locations <-  data %>% select(city,district) %>%
   unique() %>%
   mutate(contains = str_match(district,"\\u0020\\u0433\\u002E\\u0020"),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
-  left_join(select(old_locations,-city_en))%>%
+  left_join(old_district_locations)%>%
   select(city,district,district_en,location,lat,lon)
 
 missing_district_locations <- locations %>% filter(is.na(lon))
@@ -116,7 +117,7 @@ write_excel_csv(city_locations,"data/city_locations.csv")
 #join data
 data_geo <- data %>% left_join(locations) %>% left_join(city_locations)
 
-write_csv(data_geo,paste0("data/detainees/latest_daily_detainees.csv"))
+write_csv(data_geo,paste0("data/detainees/latest_daily_detainees_district.csv"))
 
 #summary tables
 cumulative_district <- data %>% group_by(city,district,city_en,district_en) %>%
