@@ -88,22 +88,25 @@ data <- data %>%
 
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 
-#get locations
+#get district locations
+old_district_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv")
 
 locations <-  data %>% select(city,district) %>%
-  filter(!str_detect(district,"неизвестно")) %>%
+  filter(!str_detect(district,"\\u043D\\u0435\\u0438\\u0437\\u0432\\u0435\\u0441\\u0442\\u043D\\u043E")) %>%
   unique() %>%
-  mutate(contains = str_match(district," г. "),
+  mutate(contains = str_match(district,"\\u0020\\u0433\\u002E\\u0020"),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
-  left_join(read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv"))%>%
-  select(city,district,city_en,district_en,location,lat,lon)
-  
-write_excel_csv(locations,"data/locations.csv")
+  left_join(select(old_locations,-city_en))%>%
+  select(city,district,district_en,location,lat,lon)
 
-missing_locations <- locations %>% filter(is.na(lon))
+missing_district_locations <- locations %>% filter(is.na(lon))
+  
+write_excel_csv(locations,"data/district_locations.csv")
+
 
 #join data
-data <- data %>% left_join(locations)
+data <- data %>% left_join(locations) %>%
+  left_join(select(old_locations,city,city_en))
 
 write_csv(data,paste0("data/detainees/latest_daily_detainees.csv"))
 
