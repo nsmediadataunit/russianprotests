@@ -29,7 +29,7 @@ city,city_en,cumulative_detainees
 Иркутск,Irkutsk,33
 Истра,Istra,1
 Йошкар-Ола,Yoshkar-Ola.,2
-Казань,Kazan.,72
+Казань,Kazan,72
 Калининград,Kaliningrad,36
 Калуга,Kaluga,13
 Кемерово,Kemerovo,2
@@ -46,8 +46,8 @@ city,city_en,cumulative_detainees
 Люберцы,Lyubertsy,2
 Магнитогорск,Magnitogorsk,4
 Махачкала,Makhachkala,1
-Мегион,Megion.,1
-Москва,Moscow,3486
+Мегион,Megion,1
+Москва,Moscow,3490
 Мурино,Murino,4
 Мурманск,Murmansk,7
 Набережные Челны,Naberezhnye Chelny,4
@@ -78,7 +78,7 @@ city,city_en,cumulative_detainees
 Ростов-на-Дону,Rostov-on-Don,22
 Рязань,Ryazan,9
 Самара,Samara,48
-Санкт-Петербург,St. Petersburg,2282
+Санкт-Петербург,St. Petersburg,2284
 Саратов,Saratov,49
 Серпухов,Serpukhov,3
 Сестрорецк,Sestroretsk,1
@@ -97,7 +97,7 @@ city,city_en,cumulative_detainees
 Томск,Tomsk,5
 Туапсе,Tuapse,1
 Тула,Tula.,2
-Тюмень,Tyumen.,19
+Тюмень,Tyumen,19
 Улан-Удэ,Ulan-Ude,6
 Ульяновск,Ulyanovsk,10
 Уфа,Ufa,38
