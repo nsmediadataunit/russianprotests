@@ -86,6 +86,7 @@ data <- map_dfr(urls,scrape_detainees)
 data <- data %>%
   mutate(across(c("district","city"), str_replace_all,"\\n|\\s"," "),
          across(c("district","city"), trimws),
+         across(c("city_detainees","district_detainees"),as.numeric),
          date=lubridate::dmy(date))
 
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
@@ -124,10 +125,14 @@ write_csv(data_geo,paste0("data/detainees/latest_daily_detainees_district.csv"))
 cumulative_district <- data_geo %>% group_by(city,district,city_en,district_en) %>%
   summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
 write_csv(data,paste0("data/detainees/latest_cumulative_detainees_district.csv"))
-cumulative_city <- data_geo %>% group_by(city,city_en)%>%
-  summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
-city2 <- data_geo %>% select(city,city_en,city_detainees) %>% unique() %>% group_by(city,city_en)%>%
+cumulative_city <- data_geo %>% select(city,city_en,city_detainees,city_lat,city_lon) %>% unique() %>% group_by(city,city_en,city_lat,city_lon)%>%
   summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T))
+city_dw <- cumulative_city %>% ungroup() %>%select(Lat=city_lat,Lon=city_lon,Title=city_en,cumulative_detainees)
+write_csv(city_dw,"data/city_dw.csv")
 write_csv(cumulative_city,paste0("data/detainees/latest_cumulative_detainees_city.csv"))
-timeseries <- data %>% group_by(date) %>% summarise(sum_district_detainees = sum(district_detainees))
+#timeseries <- data %>% group_by(date) %>% summarise(sum_district_detainees = sum(district_detainees))
+timeseries <- data_geo %>% select(city,city_en,date,city_detainees) %>% 
+  unique() %>%
+  group_by(date) %>%
+  summarise(sum_city_detainees = sum(city_detainees))
 write_csv(timeseries,"data/detainees/latest_timeseries.csv")
