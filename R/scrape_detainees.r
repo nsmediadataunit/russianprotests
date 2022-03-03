@@ -109,6 +109,7 @@ missing_district_locations <- locations %>% filter(is.na(lon))
 district_locations <- drop_na(district_locations,lon)
   
 write_excel_csv(district_locations,"data/district_locations.csv")
+write_excel_csv(missing_district_locations,"data/missing_district_locations.csv")
 
 #get city locations
 new_city_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=864898366&single=true&output=csv")
