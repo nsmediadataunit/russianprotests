@@ -13,7 +13,8 @@ library(readr)
 latest_url <- read_html("https://ovdinfo.org/") %>%
   html_element(".main-values > .value-first") %>%
   html_element("a.active") %>%
-  html_attr("href")
+  html_attr("href")%>%
+  url_absolute("https://ovdinfo.org")
 
 #get previous pages
 urls <- read_html(latest_url) %>%
@@ -92,29 +93,38 @@ data <- data %>%
 write_csv(data,paste0("data/detainees/",Sys.Date(),"_daily_detainees.csv"))
 
 #get district locations
-old_district_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv")
+#we use google sheets to manually fill in new geocodes, as this is more accurate
+new_district_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=0&single=true&output=csv")
+old_district_locations <- read_csv("data/district_locations.csv")
 
-locations <-  data %>% select(city,district) %>%
+district_locations <-  data %>% select(city,district) %>%
   filter(!str_detect(district,"\\u043D\\u0435\\u0438\\u0437\\u0432\\u0435\\u0441\\u0442\\u043D\\u043E")) %>%
   unique() %>%
   mutate(contains = str_match(district,"\\u0020\\u0433\\u002E\\u0020"),
          location=ifelse(is.na(contains),paste0(district,", ",city),district)) %>% unnest(c("location")) %>%
-  left_join(old_district_locations)%>%
+  left_join(bind_rows(old_district_locations,new_district_locations))%>%
   select(city,district,district_en,location,lat,lon) %>% unique()
 
 missing_district_locations <- locations %>% filter(is.na(lon))
+district_locations <- drop_na(district_locations,lon)
   
-write_excel_csv(locations,"data/district_locations.csv")
+write_excel_csv(district_locations,"data/district_locations.csv")
 
 #get city locations
-old_city_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=864898366&single=true&output=csv")
+new_city_locations <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqShs3EMyAriB_xQhUQfY0LL49JMNw0eK97eyjOcZk4N0vr0TCVQZYHtG0VRkFAxepHBb164yPywPp/pub?gid=864898366&single=true&output=csv")
+old_city_locations <- read_csv("data/city_locations.csv")
 
 city_locations <-  data %>% select(city) %>% unique() %>%
-  left_join(old_city_locations)
+  left_join(
+    bind_rows(old_city_locations,new_city_locations)) %>% unique()
 
 missing_city_locations <- city_locations %>% filter(is.na(city_lon))
 
+city_locations <- drop_na(city_locations,city_lon)
+
 write_excel_csv(city_locations,"data/city_locations.csv")
+write_excel_csv(missing_city_locations,"data/missing_city_locations.csv")
+
 
 #join data
 data_geo <- data %>% left_join(locations) %>% left_join(city_locations)
