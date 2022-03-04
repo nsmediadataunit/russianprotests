@@ -132,14 +132,18 @@ data_geo <- data %>% left_join(locations) %>% left_join(city_locations)
 write_excel_csv(data_geo,paste0("data/detainees/latest_daily_detainees_district.csv"))
 
 #summary tables
-cumulative_district <- data_geo %>% group_by(city,district,city_en,district_en) %>%
+cumulative_district <- data_geo %>% group_by(city,district,city_en,district_en,lat,lon) %>%
   summarise(cumulative_detainees = sum(district_detainees,na.rm=T))
 write_excel_csv(data,paste0("data/detainees/latest_cumulative_detainees_district.csv"))
 cumulative_city <- data_geo %>% left_join(read_csv("data/city_pop.csv")) %>% select(city,city_en,city_pop,city_detainees,city_lat,city_lon) %>% unique() %>% group_by(city,city_en,city_pop,city_lat,city_lon)%>%
   summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T)) %>%
   mutate(cumulative_detainees_per_1000000 = 1000000*(cumulative_detainees/city_pop))
 city_dw <- cumulative_city %>% ungroup() %>%select(Lat=city_lat,Lon=city_lon,Title=city_en,cumulative_detainees,cumulative_detainees_per_1000000)
+moscow_dw <- cumulative_district %>% ungroup() %>% filter(city_en=="Moscow") %>%
+  select(Lat=lat,Lon=lon,Title=district_en,cumulative_detainees) %>% drop_na(Lon)
+
 write_excel_csv(city_dw,"data/city_dw.csv")
+write_excel_csv(moscow_dw,"data/moscow_dw.csv")
 write_excel_csv(cumulative_city,paste0("data/detainees/latest_cumulative_detainees_city.csv"))
 #timeseries <- data %>% group_by(date) %>% summarise(sum_district_detainees = sum(district_detainees))
 timeseries <- data_geo %>% select(city,city_en,date,city_detainees) %>% 
@@ -147,4 +151,4 @@ timeseries <- data_geo %>% select(city,city_en,date,city_detainees) %>%
   group_by(date) %>%
   summarise(sum_city_detainees = sum(city_detainees))
 write_excel_csv(timeseries,"data/detainees/latest_timeseries.csv")
-
+source("moscow_map.r")

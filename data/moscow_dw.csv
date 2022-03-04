@@ -1,13 +1,5 @@
 ﻿Lat,Lon,Title,cumulative_detainees
 55.724046,37.481141,Company,1
-NA,NA,NA,11
-NA,NA,NA,178
-NA,NA,NA,19
-NA,NA,NA,23
-NA,NA,NA,29
-NA,NA,NA,34
-NA,NA,NA,50
-NA,NA,NA,9
 55.6955,37.55647,Lomonosovsky,32
 55.71947,37.55639,Luzhniki (Police Department with / K),15
 55.54227,37.49411,"MO Ministry of Internal Affairs of Russia ""Communarsky"" Moscow",21
@@ -30,7 +22,6 @@ NA,NA,NA,9
 55.85064,37.49928,OMVD of Russia at the Golovinsky district,54
 55.7044,37.65522,OMVD of Russia in the Danilovsky district of Moscow,25
 55.86873,37.47454,OMVD of Russia in the left-bank district of Moscow,23
-NA,NA,NA,4
 55.64461,37.60675,OMVD of Russia in the Nagorno district of Moscow,15
 55.65618,37.54413,OMVD of Russia in the Obruchevsky district of Moscow,49
 55.76062,37.5423,OMVD of Russia in the Presnensky district of Moscow,35
@@ -55,7 +46,6 @@ NA,NA,NA,4
 55.65759,37.64008,OMVD of Russia in the area of ​​Nagatino-gardeners in Moscow,35
 55.62586,37.72465,OMVD of Russia in the area of ​​Orekhovo-Borisovo North Moscow,17
 55.59971,37.73879,OMVD of Russia in the area of ​​Orekhovo-Borisovo South Moscow,26
-NA,NA,NA,1
 55.76334,37.78748,OMVD of Russia in the district of Perovo Moscow,39
 55.7906,37.71015,OMVD of Russia for the district of Transfiguration Moscow,77
 55.67482,37.49531,OMVD of Russia in the district Prospekt Vernadsky Moscow,55
@@ -82,9 +72,7 @@ NA,NA,NA,1
 55.73641,37.62014,OMVD of Russia in the area of ​​Yakimanka Moscow,6
 55.6096,37.51387,OMVD of Russia in the district of Yasenevo Moscow,21
 55.83776,37.66508,OMVD Rostokino,11
-NA,NA,NA,20
 55.86023,37.68909,OMVD Yaroslavsky,37
-NA,NA,NA,1
 55.88543,37.53808,OMVD in the district Dmitrovsky,18
 55.71079,37.85208,Department of the Ministry of Internal Affairs of Russia in the Koshino-Ukhtsky district of Moscow,27
 55.7685,37.63139,Department of the Ministry of Internal Affairs of Russia in the Meshchansky district of Moscow,22
@@ -100,7 +88,6 @@ NA,NA,NA,1
 55.705627,37.807685,Department of the Ministry of Internal Affairs of Russia in the district of Vykhino city of Moscow,1
 55.81642,37.79605,"Department of the Ministry of Internal Affairs of Russia in the district of Goljanovo, Moscow",6
 55.7429,37.5288,Department of the Ministry of Internal Affairs of Russia in the Dorogomilovo district of Moscow,15
-NA,NA,NA,15
 55.73642,37.62877,Department of the Ministry of Internal Affairs of Russia in the area of ​​Zamoskvorechye Moscow,3
 55.76183,37.83056,Department of the Ministry of Internal Affairs of Russia in the district of Ivanovo Moscow,53
 55.79193,37.81581,Department of the Ministry of Internal Affairs of Russia in the area of ​​Izmailovo Eastern Moscow,27
@@ -118,7 +105,6 @@ NA,NA,NA,15
 55.70751,37.93009,Department of the Ministry of Internal Affairs of Russia in the area necrasovka,16
 55.63603,37.35475,Department of the Ministry of Internal Affairs of Russia in the New-Peredelkino district of Moscow,31
 55.74848,37.80502,Department of the Ministry of Internal Affairs of Russia in Novogireevo district of Moscow,49
-NA,NA,NA,1
 55.68012,37.70107,Department of the Ministry of Internal Affairs of Russia in the area of ​​Printedry,37
 55.81755,37.44862,Department of the Ministry of Internal Affairs of Russia in the district of Pokrovskoe-Streshnevo Moscow,30
 55.86016,37.43437,Department of the Ministry of Internal Affairs of Russia in the area of ​​the North Tushino of Moscow,53
