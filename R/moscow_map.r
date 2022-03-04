@@ -21,3 +21,8 @@ moscow_map <- leaflet(moscow_dw) %>%
   )
   
 saveWidget(moscow_map,"moscow_map.html")
+#add pym.js
+read_file("moscow_map.html") %>%
+  str_replace("\\<\\/body\\>",'<script type="text/javascript" src="https://pym.nprapps.org/pym.v1.min.js"></script>
+                <script>var pymChild = new pym.Child({polling: 500});</script></body>') %>%
+  write_file("moscow_map.html")

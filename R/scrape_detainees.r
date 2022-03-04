@@ -151,4 +151,4 @@ timeseries <- data_geo %>% select(city,city_en,date,city_detainees) %>%
   group_by(date) %>%
   summarise(sum_city_detainees = sum(city_detainees))
 write_excel_csv(timeseries,"data/detainees/latest_timeseries.csv")
-source("moscow_map.r")
+source("R/moscow_map.r")
