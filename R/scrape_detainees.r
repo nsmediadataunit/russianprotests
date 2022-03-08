@@ -24,6 +24,7 @@ urls <- read_html(latest_url) %>%
   html_attr("href") %>%
   url_absolute("https://ovd.news") %>%
   c(latest_url)
+  #c(latest_url,"https://web.archive.org/web/20220305094030/https://ovd.news/news/2022/02/26/spiski-zaderzhannyh-v-svyazi-s-akciyami-protiv-voyny-s-ukrainoy-26-fevralya-2022")
 
 #function to scrape pages and get data
 
@@ -104,7 +105,7 @@ district_locations <-  data %>% select(city,district) %>%
   left_join(bind_rows(old_district_locations,new_district_locations))%>%
   select(city,district,district_en,location,lat,lon) %>% unique()
 
-missing_district_locations <- locations %>% filter(is.na(lon))
+missing_district_locations <- district_locations %>% filter(is.na(lon))
 district_locations <- drop_na(district_locations,lon)
   
 write_excel_csv(district_locations,"data/district_locations.csv")
@@ -127,7 +128,7 @@ write_excel_csv(missing_city_locations,"data/missing_city_locations.csv")
 
 
 #join data
-data_geo <- data %>% left_join(locations) %>% left_join(city_locations) 
+data_geo <- data %>% left_join(district_locations) %>% left_join(city_locations) 
 
 write_excel_csv(data_geo,paste0("data/detainees/latest_daily_detainees_district.csv"))
 
@@ -138,7 +139,7 @@ write_excel_csv(data,paste0("data/detainees/latest_cumulative_detainees_district
 cumulative_city <- data_geo %>% left_join(read_csv("data/city_pop.csv")) %>% select(city,city_en,city_pop,city_detainees,city_lat,city_lon) %>% unique() %>% group_by(city,city_en,city_pop,city_lat,city_lon)%>%
   summarise(cumulative_detainees = sum(as.numeric(city_detainees),na.rm=T)) %>%
   mutate(cumulative_detainees_per_1000000 = 1000000*(cumulative_detainees/city_pop))
-city_dw <- cumulative_city %>% ungroup() %>%select(Lat=city_lat,Lon=city_lon,Title=city_en,cumulative_detainees,cumulative_detainees_per_1000000)
+city_dw <- cumulative_city %>% ungroup() %>%select(Lat=city_lat,Lon=city_lon,Title=city_en,city,cumulative_detainees,cumulative_detainees_per_1000000)
 moscow_dw <- cumulative_district %>% ungroup() %>% filter(city_en=="Moscow") %>%
   select(Lat=lat,Lon=lon,Title=district_en,cumulative_detainees) %>% drop_na(Lon)
 
