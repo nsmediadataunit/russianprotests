@@ -49,10 +49,10 @@ scrape_detainees <- function(url){
     html_elements("h2") %>% html_text()
   
   #get city cumulative totals
-  city_total_xpath <- sprintf("//p[preceding-sibling::h2[1][contains(., '%s')]]/strong", city)
+  city_total_xpath <- sprintf("//p[preceding-sibling::h2[1][contains(., '%s')]]/strong[1]", city)
   city_total <- map(city_total_xpath, function(city_total_xpath){
     html_nodes(x = content, xpath = city_total_xpath) %>% 
-      html_text()})
+      html_text()}) %>% map(pluck,1)
   
   #get district following each city
   district_xpath <- sprintf("//h3[preceding-sibling::h2[1][contains(., '%s')]]", city)
@@ -153,3 +153,5 @@ timeseries <- data_geo %>% select(city,city_en,date,city_detainees) %>%
   summarise(sum_city_detainees = sum(city_detainees))
 write_excel_csv(timeseries,"data/detainees/latest_timeseries.csv")
 source("R/moscow_map.r")
+
+
